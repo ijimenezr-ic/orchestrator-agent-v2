@@ -1,0 +1,20 @@
+{
+  "servers": {
+    "orchestrator-worktree": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/mcp-server/orchestrator-mcp",
+      "args": [],
+      "env": {
+        "WORKTREE_BASE_DIR": "${workspaceFolder}/../.worktrees",
+        "ENGRAM_URL": "http://localhost:7437",
+        "SUBAGENT_MODEL": "claude-sonnet-4-5-20250514",
+        "MAX_SUBAGENTS": "0"
+      }
+    },
+    "engram": {
+      "type": "stdio",
+      "command": "engram",
+      "args": ["mcp"]
+    }
+  }
+}
