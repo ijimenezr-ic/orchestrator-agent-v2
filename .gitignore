@@ -1,0 +1,13 @@
+# Binario compilado del MCP server
+mcp-server/orchestrator-mcp
+
+# Worktrees de subagentes (se crean en tiempo de ejecución)
+.worktrees/
+
+# Configuración local (no commitear secrets)
+config.json
+
+# Editor
+.DS_Store
+*.swp
+*.swo

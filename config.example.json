@@ -1,0 +1,15 @@
+{
+  "_comment": "Configuración del Orquestador Multi-Agente. Copia este archivo como config.json y ajusta los valores.",
+  "max_subagents": 0,
+  "_max_subagents_comment": "0 = sin límite. Ponlo a N para limitar agentes concurrentes.",
+  "worktree_base_dir": "../.worktrees",
+  "_worktree_base_dir_comment": "Directorio base donde se crearán los worktrees de los subagentes. Relativo al repo.",
+  "engram_url": "http://localhost:7437",
+  "_engram_url_comment": "URL del servidor Engram. Arrancar con: engram serve",
+  "github_token": "",
+  "_github_token_comment": "Token de GitHub con acceso a GitHub Models API (para subagentes). Necesario para agent_spawn.",
+  "subagent_model": "claude-sonnet-4-5-20250514",
+  "_subagent_model_comment": "Modelo para los subagentes. claude-sonnet-4-5-20250514 es el recomendado.",
+  "opencode_binary": "opencode",
+  "_opencode_binary_comment": "Path al binario de opencode (o simplemente 'opencode' si está en el PATH)."
+}
