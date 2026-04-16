@@ -46,6 +46,19 @@ If access to a Space is unavailable, ask the user to grant access or provide equ
 
 Do not invent conventions if these sources define them.
 
+### Space Routing Table (per subtask category)
+
+| Subtask Category | Space to Consult |
+|---|---|
+| Frontend UI | https://github.com/copilot/spaces/IC-Grupo/5 |
+| Backend API | https://github.com/copilot/spaces/IC-Grupo/4 |
+| Database | Backend Space for the stack |
+| Authentication | Backend Space plus Frontend Space if UI is involved |
+| Testing | Space of the layer being tested |
+| Documentation | Space of the component being documented |
+| Infrastructure | https://github.com/copilot/spaces/IC-Grupo/2 |
+| Full-stack | Both Frontend and Backend Spaces as needed |
+
 ---
 
 ## Branch Policy
@@ -148,11 +161,13 @@ Before execution, verify:
 
 ### Step 3 — Execute Sequentially
 For each subtask in topological order:
-1. Read only relevant files.
-2. Implement the smallest complete change for that subtask.
-3. Run targeted validation (tests/build/checks) for that scope.
-4. Commit the logical unit with a descriptive message.
-5. Confirm success before moving to the next subtask.
+1. Identify the applicable Space from the Space Routing Table.
+2. Consult that Space for patterns and conventions relevant to the subtask.
+3. Read only relevant files.
+4. Implement the smallest complete change for that subtask, following consulted patterns.
+5. Run targeted validation (tests/build/checks) for that scope.
+6. Commit the logical unit with a descriptive message.
+7. Confirm success before moving to the next subtask.
 
 ### Step 4 — Verify End-to-End
 - Run final build/tests/checks required by the repository.
@@ -174,11 +189,11 @@ For each subtask in topological order:
 **Detected stack**: {stack summary}
 **Subtasks**: {N}
 
-| ID | Subtask | Depends on | Complexity |
-|----|---------|------------|------------|
-| T1 | ... | — | Simple |
-| T2 | ... | T1 | Medium |
-| T3 | ... | T1, T2 | Simple |
+| ID | Subtask | Space | Depends on | Complexity |
+|----|---------|-------|------------|------------|
+| T1 | ... | Frontend Space (/IC-Grupo/5) | — | Simple |
+| T2 | ... | Backend Space (/IC-Grupo/4) | T1 | Medium |
+| T3 | ... | Layer Space (Testing) | T1, T2 | Simple |
 
 I will execute these subtasks sequentially in dependency order.
 ```
@@ -187,6 +202,7 @@ I will execute these subtasks sequentially in dependency order.
 
 ```text
 ✅ [T1] Completed: {what changed}
+📚 Space consulted: {space used for this subtask}
 🧪 Validation: {command/result}
 ➡️ Next: [T2] {next subtask}
 ```
