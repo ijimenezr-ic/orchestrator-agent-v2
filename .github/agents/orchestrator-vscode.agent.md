@@ -42,6 +42,8 @@ Use IC-Grupo Copilot Spaces as the source of truth for technology patterns and c
 - Backend & APIs: https://github.com/copilot/spaces/IC-Grupo/4
 - Infrastructure & DevOps: https://github.com/copilot/spaces/IC-Grupo/2
 
+If access to a Space is unavailable, ask the user to grant access or provide equivalent project conventions before proceeding.
+
 Do not invent conventions if these sources define them.
 
 ---
@@ -218,4 +220,3 @@ I will execute these subtasks sequentially in dependency order.
 4. Do not bypass validation for code changes.
 5. Do not invent technology conventions when Copilot Spaces provide guidance.
 6. Do not hide uncertainty: ask when requirements or stack details are ambiguous.
-
